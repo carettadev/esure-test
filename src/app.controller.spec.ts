@@ -17,11 +17,18 @@ describe('AppController', () => {
   });
 
   describe('getFilms', () => {
+    it('should return a list length as expected', done => {
+      const appController = app.get<AppController>(AppController);
+      appController.getFilms().subscribe(data => {
+        expect(data.length).toEqual(mockFilms.length);
+        done();
+      });
+    });
+
     it('should return a sorted film list', done => {
       const expectedFilms = [...sortedMockFilms];
       const appController = app.get<AppController>(AppController);
       appController.getFilms().subscribe(data => {
-        expect(data[0].rt_score).toEqual('100');
         data.forEach((film: Film, index) => {
           expect(film).toEqual(expectedFilms[index]);
         });
