@@ -40,7 +40,7 @@ $ npm run test:cov
 ```
 
 ## Unit tests to write/improve:
-1) unit tests required for app.service.ts with mocked http srrvice get response
+1) unit tests required for app.service.ts with mocked http service get response
 2) Add spyOn to check correct functions are called
 3) More sorting scenarios. i.e. What happens if 0 array? What happens with 1 item in array? What happens when all have same rt_score
 
